@@ -1,1 +1,6 @@
 <h1>hello world</h1>
+
+<% @entries.each do |entry|%>
+  <%= image_tag entry.photo.url if entry.photo.file? %> 
+  <p> <%= entry.description %> </p>
+<% end %>
