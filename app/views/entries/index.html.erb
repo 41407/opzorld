@@ -2,5 +2,6 @@
 
 <% @entries.each do |entry|%>
   <%= image_tag entry.photo.url if entry.photo.file? %> 
-  <p> <%= entry.description %> </p>
+  <p> <%= entry.month_and_day unless entry.capture_time.nil? %>
+    <%= entry.description %> </p>
 <% end %>
