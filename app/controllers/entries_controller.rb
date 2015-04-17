@@ -28,7 +28,7 @@ class EntriesController < ApplicationController
     @entry.save
     @entry.destroy
     respond_to do |format|
-      format.html { redirect_to :index }
+      format.html { redirect_to root_path }
     end
   end
 
