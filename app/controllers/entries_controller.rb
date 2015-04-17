@@ -1,6 +1,7 @@
 class EntriesController < ApplicationController
+  before_action :set_entry, only: [:show, :destroy]
+
   def show
-    @entry = Entry.find params[:id]
   end
 
   def index
@@ -23,9 +24,18 @@ class EntriesController < ApplicationController
   end
 
   def destroy
+    @entry.photo = nil
+    @entry.save
+    @entry.destroy
+    respond_to do |format|
+      format.html { redirect_to :index }
+    end
   end
 
   private
+  def set_entry
+    @entry = Entry.find params[:id]
+  end
 
   def entry_params
     params.require(:entry).permit(:photo, :description)
