@@ -48,3 +48,12 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 end
 
+group :production do
+ 
+  # Use postgresql for Heroku
+  gem 'pg'
+
+  # This gem is also required for Heroku
+  gem 'rails_12factor'
+
+end
