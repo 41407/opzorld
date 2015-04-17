@@ -1,0 +1,5 @@
+<%= form_for @entry, :url => entries_path, :html => { :multipart => true } do |form| %>
+  <%= form.file_field :photo %>
+  <%= form.text_field :description %>
+  <%= form.submit "save", :class => ""%>
+<% end %>
