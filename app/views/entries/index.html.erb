@@ -5,3 +5,5 @@
   <p> <%= entry.month_and_day unless entry.capture_time.nil? %>
     <%= entry.description %> </p>
 <% end %>
+
+<%= will_paginate @entries %>
