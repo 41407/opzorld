@@ -1,9 +1,14 @@
-<h1>hello world</h1>
-
-<% @entries.each do |entry|%>
-  <%= image_tag entry.photo.url if entry.photo.file? %> 
-  <p> <%= entry.month_and_day unless entry.capture_time.nil? %>
-    <%= entry.description %> </p>
-<% end %>
-
-<%= will_paginate @entries %>
+<div class="container">
+  <% @entries.each do |entry|%>
+    <div class = "row padded">
+      <%= image_tag entry.photo.url if entry.photo.file? %> 
+      <div class = "row">
+        <p> <%= entry.month_and_day unless entry.capture_time.nil? %></p>
+        <p><%= entry.description %> </p>
+      </div>
+    </div>
+  <% end %>
+  <div class = "row">
+    <%= will_paginate @entries %>
+  </div>
+</div>
