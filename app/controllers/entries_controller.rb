@@ -1,5 +1,6 @@
 class EntriesController < ApplicationController
   before_action :set_entry, only: [:show, :destroy]
+  http_basic_authenticate_with name: "testipoika", password: "salainen", except: :index
 
   def show
   end

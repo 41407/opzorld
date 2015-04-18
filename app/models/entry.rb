@@ -11,6 +11,6 @@ class Entry < ActiveRecord::Base
 
 private
   def parse_capture_time_from_filename
-    update(capture_time: Date.parse(self.photo.original_filename))
+    update(capture_time: Date.parse(self.photo.original_filename.split(".")[0]))
   end
 end
