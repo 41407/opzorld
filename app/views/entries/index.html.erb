@@ -2,7 +2,7 @@
   <div id="entries">
     <%= render @entries %>
   </div>
-  <div class = "row">
-    <%= will_paginate @entries %>
+  <div class = "row hidden">
+    <%= will_paginate @entries, :page_links => false %>
   </div>
 </div>
