@@ -1,5 +1,7 @@
-<%= image_tag @entry.photo.url if @entry.photo.file? %>
-<p><%= @entry.description %></p>
-<p><%= @entry.month_and_day %></p>
+<%= render 'entry', { entry: @entry } %>
 
-<%= button_to 'Delete entry', @entry, :method => :delete, data: { confirm: 'Are you sure you want to delete this entry?' } %>
+<div class = "padded row">
+  <%= link_to 'Delete this entry', @entry, :method => :delete, data: { confirm: 'Are you sure you want to delete this entry?' } %> |
+  <%= link_to 'Upload new entry', new_entry_path %> |
+  <%= link_to 'Go back', root_url %>
+</div>
