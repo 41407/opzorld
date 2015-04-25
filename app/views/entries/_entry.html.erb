@@ -1,9 +1,9 @@
 <div class = "entry">
   <div class = "padded row photograph">
-    <%= image_tag entry.photo.url if entry.photo.file? %> 
-    <div class = "row capture-time-and-description">
-      <p class = "capture-time"> <%= entry.month_and_day unless entry.capture_time.nil? %></p>
-      <p class = "description"><%= entry.description %> </p>
-    </div>
+	  <%= image_tag entry.photo.url, :class => "img-responsive centered" if entry.photo.file? %> 
+	  <div class = "row capture-time-and-description">
+	    <p class = "capture-time"> <%= entry.month_and_day unless entry.capture_time.nil? %></p>
+	    <p class = "description"><%= entry.description %> </p>
+	</div>
   </div>
 </div>
