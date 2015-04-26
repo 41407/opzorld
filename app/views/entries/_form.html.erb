@@ -1,5 +1,11 @@
 <%= form_for @entry, :url => entries_path, :html => { :multipart => true } do |form| %>
-  <%= form.file_field :photo %>
-  <%= form.text_field :description %>
+<div class=  "centered padded row">
+  <%= form.file_field :photo, :class => "centered file-field" %>
+</div>
+<div class=  "centered row">
+  <%= form.text_field :description, :placeholder => "description" %>
+</div>
+<div class=  "centered padded row">
   <%= form.submit "save", :class => ""%>
+</div>
 <% end %>

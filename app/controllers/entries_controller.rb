@@ -15,12 +15,10 @@ class EntriesController < ApplicationController
 
   def create
     @entry = Entry.new(entry_params)
-    respond_to do |format|
-      if @entry.save
-        format.html { redirect_to @entry }
-      else
-        format.html { render :new }
-      end
+    if @entry.save
+      redirect_to @entry
+    else
+      render :new
     end
   end
 
@@ -28,9 +26,7 @@ class EntriesController < ApplicationController
     @entry.photo = nil
     @entry.save
     @entry.destroy
-    respond_to do |format|
-      format.html { redirect_to root_path }
-    end
+    redirect_to root_path
   end
 
   private
