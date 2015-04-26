@@ -1,11 +1,18 @@
 <%= form_for @entry, :url => entries_path, :html => { :multipart => true } do |form| %>
-<div class=  "centered padded row">
-  <%= form.file_field :photo, :class => "centered file-field" %>
-</div>
-<div class=  "centered row">
-  <%= form.text_field :description, :placeholder => "description" %>
-</div>
-<div class=  "centered padded row">
-  <%= form.submit "save", :class => ""%>
-</div>
+  <div class=  "centered row">
+    <%= form.file_field :photo, :class => "centered file-field" %>
+  </div>
+  <br>
+  <div class=  "centered row file-field">
+    <p>capture time override which will be used if the image filename can't be parsed</p>
+    <%= form.date_select :capture_time, :class => "file-field" %>
+  </div>
+  <br>
+  <div class=  "centered row file-field">
+    <%= form.text_field :description, :placeholder => "description" %>
+  </div>
+  <br>
+  <div class=  "centered row">
+    <%= form.submit "save", :class => ""%>
+  </div>
 <% end %>

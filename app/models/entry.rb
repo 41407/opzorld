@@ -16,7 +16,7 @@ private
     begin
       update(capture_time: Date.parse(self.photo.original_filename.split(".")[0]))
     rescue
-      update(capture_time: Date.current)
+      puts "File name parsing failed."
     end
   end
 end
