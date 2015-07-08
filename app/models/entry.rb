@@ -1,5 +1,5 @@
 class Entry < ActiveRecord::Base
-  default_scope { order(capture_time: :desc) }
+  default_scope { order(capture_time: :desc, id: :desc) }
   after_create :parse_capture_time_from_filename
 
   has_attached_file :photo, :styles => { :original => "1000x1000>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
