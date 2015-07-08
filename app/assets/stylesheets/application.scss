@@ -16,17 +16,8 @@ body, html {
   color: #bbbbbb;
 }
 
-.row {
-  text-align: center;
-}
-
-.padded {
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
-.hidden {
-  display: none;
+.capture-time-and-description {
+  padding-top: 10px;
 }
 
 .centered {
@@ -47,6 +38,15 @@ body, html {
   max-height: 90vh;
 }
 
-.capture-time-and-description {
-  padding-top: 10px;
+.hidden {
+  display: none;
+}
+
+.padded {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.row {
+  text-align: center;
 }
