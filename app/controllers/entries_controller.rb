@@ -1,7 +1,7 @@
 class EntriesController < ApplicationController
   before_action :set_entry, only: [:show, :destroy]
-  after_action :set_logged_in, only: :new
-  http_basic_authenticate_with name: ENV['OPZ_NAME'], password: ENV['OPZ_PASS'], except: :index
+  before_action :ensure_user_is_logged_in, except: [:index, :login]
+  http_basic_authenticate_with name: ENV['OPZ_NAME'], password: ENV['OPZ_PASS'], only: :login
 
   def show
   end
@@ -30,6 +30,11 @@ class EntriesController < ApplicationController
     redirect_to root_path
   end
 
+  def login
+    set_logged_in
+    redirect_to root_path
+  end
+
   def logout
     session[:logged_in] = false
     redirect_to root_path
@@ -46,5 +51,9 @@ class EntriesController < ApplicationController
 
   def set_logged_in
     session[:logged_in] = true
+  end
+
+  def ensure_user_is_logged_in
+    redirect_to "/login" unless session[:logged_in]
   end
 end
