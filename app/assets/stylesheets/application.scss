@@ -7,6 +7,13 @@ body {
   background-image: url('bg.png');
 }
 
+.admin-fixed-panel {
+  position: fixed;
+  right: 15px;
+  top: 10px;
+  color: #bbbbbb;
+}
+
 .row {
   text-align: center;
 }

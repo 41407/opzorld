@@ -8,7 +8,11 @@
 </head>
 <body>
 
-<%= yield %>
+  <% if session[:logged_in] %>
+    <p class="admin-fixed-panel">You are logged in. <%= link_to "Edit entries", root_path %>, <%= link_to "upload new entry", new_entry_path %> or <%= link_to "log out", "/logout" %>.</p> 
+  <% end %>
+
+  <%= yield %>
 
 </body>
 </html>
