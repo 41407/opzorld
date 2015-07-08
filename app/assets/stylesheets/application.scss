@@ -2,7 +2,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-body {
+body, html {
+  height: 100%;
+  overflow-y: auto;
   background-color: #191919;
   background-image: url('bg.png');
 }
@@ -39,6 +41,10 @@ body {
 .file-field {
   padding: 16px 16px 16px 16px;
   background-color: #0E0E0E;
+}
+
+.fit-to-screen-vertically {
+  max-height: 90vh;
 }
 
 .capture-time-and-description {
