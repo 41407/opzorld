@@ -1,3 +1,5 @@
+<%= link_to "logout", "logout" if session[:logged_in] %>
+
 <div class="container-fluid">
   <div id="entries">
     <%= render @entries %>

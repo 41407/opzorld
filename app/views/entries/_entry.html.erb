@@ -1,6 +1,12 @@
 <div class = "entry">
   <div class = "padded row photograph">
-    <%= image_tag entry.photo.url, :class => "img-responsive centered" if entry.photo.file? %> 
+    <% if entry.photo.file? %>
+      <% if session[:logged_in] then %>
+        <%= link_to (image_tag entry.photo.url, :class => "img-responsive centered"), entry %> 
+      <% else %>
+        <%= image_tag entry.photo.url, :class => "img-responsive centered"%> 
+      <% end %>
+    <% end %>
     <div class = "row capture-time-and-description">
       <p class = "capture-time"> <%= entry.month_and_day unless entry.capture_time.nil? %></p>
       <p class = "description"><%= entry.description %> </p>

@@ -60,4 +60,6 @@ Rails.application.routes.draw do
 
   get 'new' => 'entries#new'
 
+  get 'logout' => 'entries#logout'
+
 end
